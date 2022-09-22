@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".ui.teammembers.TeamMembersActivity"
     >
 
     <LinearLayout
+        android:id="@+id/teamNameContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:background="@color/colorAccent"
         android:orientation="horizontal"
         android:padding="@dimen/padding_standard"
@@ -24,6 +25,7 @@
             android:hint="@string/team_hint"
             android:imeOptions="actionDone"
             android:inputType="textPersonName"
+            android:minHeight="48dp"
             android:text="@string/default_team_name"
             />
 
@@ -40,8 +42,9 @@
         android:id="@+id/teamMembersList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/teamNameContainer"
         android:layout_margin="@dimen/padding_standard"
         android:scrollbars="vertical"
         />
 
-</LinearLayout>
+</RelativeLayout>
