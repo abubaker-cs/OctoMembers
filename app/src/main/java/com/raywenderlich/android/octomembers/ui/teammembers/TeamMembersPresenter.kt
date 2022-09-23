@@ -41,11 +41,14 @@ class TeamMembersPresenter(val repository: Repository, val view: TeamMembersCont
     TeamMembersContract.Presenter {
 
     override fun retrieveAllMembers(teamName: String) {
+
+        showViewLoadingState()
+
         repository.retrieveTeamMembers(teamName, object : Callback<List<Member>> {
             override fun onResponse(call: Call<List<Member>>?, response: Response<List<Member>>?) {
                 val members = response?.body()
                 if (members != null) {
-                    view.showMembers(members)
+                    showMembersInView(members)
                 } else {
                     clearViewMembersAndShowError()
                 }
@@ -60,5 +63,18 @@ class TeamMembersPresenter(val repository: Repository, val view: TeamMembersCont
     private fun clearViewMembersAndShowError() {
         view.clearMembers()
         view.showErrorRetrievingMembers()
+        view.hideLoading()
+        view.enableInput()
+    }
+
+    private fun showViewLoadingState() {
+        view.showLoading()
+        view.disableInput()
+    }
+
+    private fun showMembersInView(members: List<Member>) {
+        view.showMembers(members)
+        view.hideLoading()
+        view.enableInput()
     }
 }
