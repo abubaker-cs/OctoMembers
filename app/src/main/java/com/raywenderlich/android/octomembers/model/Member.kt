@@ -32,7 +32,6 @@ package com.raywenderlich.android.octomembers.model
 
 import com.google.gson.annotations.SerializedName
 
-
 data class Member(
     val name: String,
     val login: String,

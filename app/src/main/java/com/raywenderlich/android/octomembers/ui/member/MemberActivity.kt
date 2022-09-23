@@ -38,9 +38,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.raywenderlich.android.octomembers.R
 import com.raywenderlich.android.octomembers.model.Member
 import com.raywenderlich.android.octomembers.repository.remote.RemoteRepository
-import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_member.*
-import kotlinx.android.synthetic.main.list_item_team_member.*
 
 class MemberActivity : AppCompatActivity(), MemberContract.View {
 
@@ -79,9 +77,9 @@ class MemberActivity : AppCompatActivity(), MemberContract.View {
 
     override fun showMember(member: Member) {
 
-        Picasso.get()
-            .load(member.avatarUrl)
-            .into(teamMemberAvatar)
+//        Picasso.get()
+//            .load(member.avatarUrl)
+//            .into(teamMemberAvatar)
 
         memberName.text = member.name
         memberLogin.text = member.login

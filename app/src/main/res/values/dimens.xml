@@ -7,5 +7,6 @@
     <dimen name="login_text_size">18sp</dimen>
     <dimen name="type_text_size">14sp</dimen>
     <dimen name="detail_avatar_size">144dp</dimen>
+    <dimen name="detail_avatar_container_size">200dp</dimen>
     <dimen name="detail_text_size">16sp</dimen>
 </resources>
