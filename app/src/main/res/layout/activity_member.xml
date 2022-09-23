@@ -8,11 +8,12 @@
     tools:context="com.raywenderlich.android.octomembers.ui.member.MemberActivity"
     >
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/detail_avatar_container_size"
         android:background="@color/colorAccent"
-        android:gravity="center"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
         >
 
         <ImageView
@@ -20,10 +21,23 @@
             android:layout_width="@dimen/detail_avatar_size"
             android:layout_height="@dimen/detail_avatar_size"
             android:contentDescription="@string/contentDescription_teamMemberAvatar"
+            android:padding="@dimen/padding_standard"
             tools:src="@drawable/ic_launcher_background"
             />
 
-    </RelativeLayout>
+        <TextView
+            android:id="@+id/memberName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:maxLines="3"
+            android:padding="@dimen/padding_standard"
+            android:textSize="@dimen/detail_name_text_size"
+            tools:text="FirstName LastName"
+            />
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -33,24 +47,6 @@
         android:gravity="center"
         android:orientation="vertical"
         >
-
-        <!-- Name -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
-
-            <TextView
-                style="@style/member_label"
-                android:text="@string/label_name"
-                />
-
-            <TextView
-                android:id="@+id/memberName"
-                style="@style/member_info"
-                />
-
-        </LinearLayout>
 
         <!-- Login -->
         <LinearLayout
