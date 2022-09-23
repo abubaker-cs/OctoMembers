@@ -68,7 +68,7 @@ class TeamMemberAdapter(var members: List<Member>) :
 
             Picasso.get()
                 .load(member.avatarUrl)
-                .into(itemView.teamMemberAvatar)
+                .into(itemView.itemMemberAvatar)
 
             itemView.teamMemberLogin.text = member.login
 

@@ -9,7 +9,7 @@
     >
 
     <ImageView
-        android:id="@+id/teamMemberAvatar"
+        android:id="@+id/itemMemberAvatar"
         android:layout_width="@dimen/list_item_height"
         android:layout_height="@dimen/list_item_height"
         android:contentDescription="@string/contentDescription_teamMemberAvatar"
@@ -26,7 +26,7 @@
         android:layout_marginStart="@dimen/padding_standard"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/teamMemberType"
-        app:layout_constraintStart_toEndOf="@+id/teamMemberAvatar"
+        app:layout_constraintStart_toEndOf="@+id/itemMemberAvatar"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Username"
         />
