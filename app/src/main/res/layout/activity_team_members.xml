@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:background="@color/colorAccent"
+        android:background="@color/teamMembersHeader"
         android:orientation="horizontal"
         android:padding="@dimen/padding_standard"
         >
@@ -68,7 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/empty_string_format"
+            android:text="@string/empty_state_format"
             android:visibility="invisible"
             tools:visibility="visible"
             />

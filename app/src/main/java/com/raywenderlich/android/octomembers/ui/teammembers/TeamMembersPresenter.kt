@@ -48,14 +48,16 @@ class TeamMembersPresenter(val repository: Repository, val view: TeamMembersCont
             override fun onResponse(call: Call<List<Member>>?, response: Response<List<Member>>?) {
                 val members = response?.body()
                 if (members != null) {
-                    showMembersInView(members)
+                    showMembersAndEnableInput(members)
                 } else {
                     clearViewMembersAndShowError()
+                    enableInput()
                 }
             }
 
             override fun onFailure(call: Call<List<Member>>?, t: Throwable?) {
                 clearViewMembersAndShowError()
+                enableInput()
             }
         })
     }
@@ -64,17 +66,39 @@ class TeamMembersPresenter(val repository: Repository, val view: TeamMembersCont
         view.clearMembers()
         view.showErrorRetrievingMembers()
         view.hideLoading()
-        view.enableInput()
     }
 
     private fun showViewLoadingState() {
         view.showLoading()
         view.disableInput()
+        view.hideMembers()
+        view.hideEmptyState()
     }
 
     private fun showMembersInView(members: List<Member>) {
         view.showMembers(members)
         view.hideLoading()
+    }
+
+    private fun enableInput() {
         view.enableInput()
     }
+
+    private fun showEmptyState() {
+        view.showEmptyState()
+        view.hideMembers()
+        view.hideLoading()
+    }
+
+    private fun showMembersAndEnableInput(members: List<Member>) {
+
+        if (members.isNotEmpty()) {
+            showMembersInView(members)
+        } else {
+            showEmptyState()
+        }
+
+        enableInput()
+    }
+
 }

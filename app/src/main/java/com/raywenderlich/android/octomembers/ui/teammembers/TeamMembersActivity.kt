@@ -100,10 +100,11 @@ class TeamMembersActivity : AppCompatActivity(), TeamMembersContract.View {
     override fun showMembers(members: List<Member>) {
         adapter.members = members
         adapter.notifyDataSetChanged()
+        teamMembersList.visibility = View.VISIBLE
     }
 
     override fun hideMembers() {
-        TODO("Not yet implemented")
+        teamMembersList.visibility = View.INVISIBLE
     }
 
     override fun showErrorRetrievingMembers() {
@@ -117,12 +118,10 @@ class TeamMembersActivity : AppCompatActivity(), TeamMembersContract.View {
 
     override fun showLoading() {
         loadingIndicator.visibility = View.VISIBLE
-        teamMembersList.visibility = View.INVISIBLE
     }
 
     override fun hideLoading() {
         loadingIndicator.visibility = View.GONE
-        teamMembersList.visibility = View.VISIBLE
     }
 
     override fun enableInput() {
@@ -134,10 +133,14 @@ class TeamMembersActivity : AppCompatActivity(), TeamMembersContract.View {
     }
 
     override fun showEmptyState() {
-        TODO("Not yet implemented")
+        emptyState.visibility = View.VISIBLE
+        emptyState.text = String.format(
+            getString(R.string.empty_state_format),
+            teamName.text.toString()
+        )
     }
 
     override fun hideEmptyState() {
-        TODO("Not yet implemented")
+        emptyState.visibility = View.INVISIBLE
     }
 }
