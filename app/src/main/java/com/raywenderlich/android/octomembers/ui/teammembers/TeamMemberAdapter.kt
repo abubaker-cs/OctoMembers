@@ -38,7 +38,7 @@ import com.raywenderlich.android.octomembers.R
 import com.raywenderlich.android.octomembers.model.Member
 import com.raywenderlich.android.octomembers.ui.member.MemberActivity
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.list_item_team_member_new.view.*
+import kotlinx.android.synthetic.main.list_item_team_member.view.*
 
 class TeamMemberAdapter(var members: List<Member>) :
     RecyclerView.Adapter<TeamMemberAdapter.TeamMemberViewHolder>() {
@@ -48,7 +48,7 @@ class TeamMemberAdapter(var members: List<Member>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TeamMemberViewHolder {
         val itemView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.list_item_team_member_new, parent, false)
+            .inflate(R.layout.list_item_team_member, parent, false)
         return TeamMemberViewHolder(itemView)
     }
 
