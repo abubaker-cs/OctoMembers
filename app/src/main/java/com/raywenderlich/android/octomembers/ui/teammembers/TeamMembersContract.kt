@@ -37,12 +37,15 @@ interface TeamMembersContract {
 
     interface View {
         fun showMembers(members: List<Member>)
+        fun hideMembers()
         fun showErrorRetrievingMembers()
         fun clearMembers()
         fun showLoading()
         fun hideLoading()
         fun enableInput()
         fun disableInput()
+        fun showEmptyState()
+        fun hideEmptyState()
     }
 
     interface Presenter {

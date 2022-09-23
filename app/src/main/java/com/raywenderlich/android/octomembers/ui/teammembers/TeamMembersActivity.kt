@@ -102,6 +102,10 @@ class TeamMembersActivity : AppCompatActivity(), TeamMembersContract.View {
         adapter.notifyDataSetChanged()
     }
 
+    override fun hideMembers() {
+        TODO("Not yet implemented")
+    }
+
     override fun showErrorRetrievingMembers() {
         Toast.makeText(this, getString(R.string.error_retrieving_team), Toast.LENGTH_SHORT).show()
     }
@@ -127,5 +131,13 @@ class TeamMembersActivity : AppCompatActivity(), TeamMembersContract.View {
 
     override fun disableInput() {
         showMembers.isEnabled = false
+    }
+
+    override fun showEmptyState() {
+        TODO("Not yet implemented")
+    }
+
+    override fun hideEmptyState() {
+        TODO("Not yet implemented")
     }
 }

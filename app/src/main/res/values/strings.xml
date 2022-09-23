@@ -6,6 +6,7 @@
     <string name="error_retrieving_team">Error retrieving team</string>
     <string name="error_retrieving_member">Error retrieving member</string>
     <string name="error_team_name_empty">Team name cannot be empty</string>
+    <string name="empty_string_format">No members found for %1$s</string>
     <string name="contentDescription_teamMemberAvatar">Team Member Avatar</string>
     <string name="label_login">login:</string>
     <string name="label_company">company:</string>
