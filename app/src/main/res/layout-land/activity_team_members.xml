@@ -24,9 +24,10 @@
 
         <EditText
             android:id="@+id/teamName"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints="Search by member name"
+            android:gravity="center"
             android:hint="@string/team_hint"
             android:imeOptions="actionDone"
             android:inputType="textPersonName"
